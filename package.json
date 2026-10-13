@@ -1,0 +1,44 @@
+{
+  "name": "nigerian-reference-data-mcp",
+  "version": "0.1.0",
+  "description": "MCP server: pay-per-call Nigerian validation and reference data for AI agents (x402, USDC, no API keys).",
+  "type": "module",
+  "bin": {
+    "nigerian-reference-data-mcp": "index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "x402",
+    "ai-agents",
+    "nigeria",
+    "nigerian",
+    "usdc",
+    "pay-per-call",
+    "validation",
+    "nuban",
+    "nin",
+    "bvn",
+    "kyc",
+    "onboarding",
+    "agent-tools"
+  ],
+  "license": "MIT",
+  "homepage": "https://api.postandshare.net",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@x402/core": "^2.28.0",
+    "@x402/evm": "^2.28.0",
+    "@x402/fetch": "^2.28.0",
+    "viem": "^2.57.5",
+    "zod": "^3.25.76"
+  }
+}
