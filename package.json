@@ -32,6 +32,13 @@
     "agent-tools"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chimaobikanu/nigerian-reference-data-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chimaobikanu/nigerian-reference-data-mcp/issues"
+  },
   "homepage": "https://api.postandshare.net",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",
