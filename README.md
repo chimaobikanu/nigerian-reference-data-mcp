@@ -29,6 +29,9 @@ that wallet (which needs USDC on Base or Polygon — the facilitator covers the 
 token is required). Leave it out and paid tools return the live payment challenge instead of data,
 so your host can settle it however it likes. The free tool works either way.
 
+If your wallet holds USDC on a chain other than Base, set `X402_PREFER_NETWORKS` to the chain you
+want to pay on, e.g. `eip155:137` for Polygon. Without it the server pays on Base.
+
 ## Tools
 
 | Tool | Price | What it does |

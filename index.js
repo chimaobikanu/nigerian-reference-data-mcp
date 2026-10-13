@@ -33,6 +33,16 @@ if (KEY) {
   const account = privateKeyToAccount(KEY.startsWith('0x') ? KEY : `0x${KEY}`);
   const client = new x402Client();
   registerExactEvmScheme(client, { signer: account });
+  // The SDK default selector is `accepts => accepts[0]` — it picks the FIRST offered network, so a
+  // multi-network challenge silently routes the payment to whichever chain is listed first. That
+  // fails for any wallet funded elsewhere, with no error explaining why. Prefer Base (the chain most
+  // x402 buyers hold USDC on), overridable with X402_PREFER_NETWORKS.
+  client.paymentRequirementsSelector = (v, accepts) => {
+    const pref = (process.env.X402_PREFER_NETWORKS || 'eip155:8453')
+      .split(',').map(s => s.trim()).filter(Boolean);
+    for (const n of pref) { const a = accepts.find(x => x.network === n); if (a) return a; }
+    return accepts[0];
+  };
   paidFetch = wrapFetchWithPayment(fetch, client);
   payingWallet = account.address;
 }
